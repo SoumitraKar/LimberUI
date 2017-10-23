@@ -1,0 +1,36 @@
+.navbar {
+    background-color: #286090;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    border-radius: 0px;
+    color: white;
+    height: 42px;
+    z-index: 2;
+}
+.nav-tiny-text {
+  font-size: 11px;
+  font-weight: 100;
+}
+.bell-logo {
+    position: absolute;
+    right: 0px;
+    margin: 11px 21px;
+    cursor: pointer;
+}
+.navbar-toggleable-xl .navbar-collapse {
+    width: calc(100% - 200px);
+    padding-left: 32px;
+}
+
+.dropdown-menu {
+    left: initial !important;
+    top: 28px;
+    right: -5px !important;
+}
+i#dropdownBellButton {
+    height: 20px;
+    width: 20px;
+    overflow: hidden;
+}

@@ -1,0 +1,26 @@
+.app-body {
+  margin-top: 50px;
+    position: absolute;
+    height: calc(100% - 50px);
+    width: 100%;
+  /*padding-left: 50px;*/
+}
+.main-container.full {
+    width: calc(100% - 75px);
+    left: 50px;
+
+    -webkit-transition:all 0.5s ease-in-out;
+    -moz-transition:all 0.5s ease-in-out;
+    -o-transition:all 0.5s ease-in-out;
+    transition:all 0.5s ease-in-out;
+}
+.main-container {
+    position: absolute;
+    width: calc(100% - 280px);
+    left: 255px;
+
+    -webkit-transition:all 0.5s ease-in-out;
+    -moz-transition:all 0.5s ease-in-out;
+    -o-transition:all 0.5s ease-in-out;
+    transition:all 0.5s ease-in-out;
+}

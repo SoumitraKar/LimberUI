@@ -1,0 +1,22 @@
+.project-box[_ngcontent-c2] {
+    background: #487ba6;
+    margin: 6px;
+    overflow: hidden;
+    padding: 2px 5px;
+    cursor: pointer;
+    width: 241px;
+    color: black;
+    /* clear: both; */
+    height: 99px;
+    border-radius: 8px;
+    box-shadow: 1px 1px 6px #286090;
+}
+.project-box-header {
+    border-bottom: 1px solid #376d9a;
+    font-weight: 600;
+    cursor: auto;
+}
+.project-box-header i.fa.fa-pencil-square {
+    float: right;
+    margin: 3px -10px 0px 0px;
+}
