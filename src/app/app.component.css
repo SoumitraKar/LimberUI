@@ -1,6 +1,5 @@
 .app-body {
   margin-top: 50px;
-    position: absolute;
     height: calc(100% - 50px);
     width: 100%;
   /*padding-left: 50px;*/

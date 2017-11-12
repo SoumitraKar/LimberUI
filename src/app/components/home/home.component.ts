@@ -1,24 +1,40 @@
-import { Component } from '@angular/core';
+import { Component, ComponentRef, ElementRef } from '@angular/core';
 import { projectService } from '../../services/project.service';
+import { storyService } from '../../services/story.service';
+
+import { AppComponent }  from '../../app.component';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'app-project',
-  templateUrl: './project.component.html',
-  styleUrls: ['./project.component.css'],
-  providers: [projectService]
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css'],
+  providers: [projectService, storyService]
 })
 
-export class ProjectComponent {
-  constructor(private projectService: projectService, private modalService: NgbModal) {
-    this.get_project_details_by_user ("59bfc108e233431e28526831");
+export class HomeComponent {
+  constructor(private projectService: projectService, private storyService: storyService, private modalService: NgbModal,
+  private _appComponent: AppComponent) {
+      this.userId = this._appComponent.get_userId();
+      this.get_project_details_by_user (this.userId);
+      this.get_story_by_assignee (this.userId);
   }
-  userId:string = "59bfbf8c5854da09bcee77c8";
-  projectId:string = "59bfc0490bbdab1c1ceb2bd1";
+  userId:String = "5a01bfa0dfad2b2b74dea825";
+  projectId:String = "";
   projects:any = [];
+  stories:any = [];
   projectToEdit:any = {};
-  get_project_details_by_user(user_id:string) {
-    console.log("QQQQQQQQQQQQQQQQ")
+  set_bar_color (per:number) {
+    let styles = {
+      'background-color': (per < 40) ? '#d9534f' : (per < 70) ? '#31b0d5' : '#5cb85c'
+    };
+    return styles;
+  }
+  goto_sprintBoard(projectId:String) {
+    this._appComponent.set_projectId(projectId);
+    this._appComponent.goto_page('storyBoard');
+  }
+  get_project_details_by_user (user_id:String) {
     var parent = this;
     this.projectService.get_project_details_by_user(user_id,
       function (project:any){
@@ -26,7 +42,15 @@ export class ProjectComponent {
       }
     );
   }
-  get_project_details_by_id(id:string) {
+  get_story_by_assignee(user_id:String) {
+    var parent = this;
+    this.storyService.get_story_by_assignee(user_id,
+      function (stories:any){
+        parent.stories = JSON.parse(stories._body);
+      }
+    );
+  }
+  get_project_details_by_id(id:String) {
     var parent = this;
     this.projectService.get_project_details_by_id(id,
       function (project:any){
@@ -34,7 +58,7 @@ export class ProjectComponent {
       }
     );
   }
-  add_user_to_project(user_id:string, project_id:string) {
+  add_user_to_project(user_id:String, project_id:String) {
     var parent = this;
     var changedProject;
     this.projectService.add_user_to_project(user_id, project_id,
@@ -51,7 +75,7 @@ export class ProjectComponent {
       }
     );
   }
-  remove_user_from_project(user_id:string, project_id:string) {
+  remove_user_from_project(user_id:String, project_id:String) {
     var parent = this;
     var changedProject;
     this.projectService.remove_user_from_project(user_id, project_id,
@@ -70,7 +94,7 @@ export class ProjectComponent {
   }
 
   // Modal Code Start
-closeResult: string;
+closeResult: String;
 open(project:any, content:any) {
   this.projectToEdit = project;
   this.modalService.open(content).result.then((result) => {
@@ -80,7 +104,7 @@ open(project:any, content:any) {
   });
 }
 
-private getDismissReason(reason: any): string {
+private getDismissReason(reason: any): String {
   if (reason === ModalDismissReasons.ESC) {
     return 'by pressing ESC';
   } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {

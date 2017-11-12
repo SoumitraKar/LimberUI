@@ -1,5 +1,6 @@
 <div class="container-fluid app-body" >
   <!--<app-rightpanel></app-rightpanel>-->
-  <app-navbar></app-navbar>
-  <app-project></app-project>
+  <router-outlet>
+  </router-outlet>
+  <app-navbar (gotoPage) = "goto_page($event)"></app-navbar>
 </div>

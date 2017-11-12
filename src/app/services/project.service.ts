@@ -15,7 +15,7 @@ export class projectService {
       }
     )
   }
-  get_project_details_by_user(user_id:string, callback:any) {
+  get_project_details_by_user(user_id:String, callback:any) {
     let body = {
     "user_id" : user_id
     };
@@ -27,7 +27,7 @@ export class projectService {
       }
     )
   }
-  get_project_details_by_id(id:string, callback:any) {
+  get_project_details_by_id(id:String, callback:any) {
     let body = {
     "id" : id
     };
@@ -39,7 +39,7 @@ export class projectService {
       }
     )
   }
-  add_user_to_project(user_id:string, project_id:string, callback:any) {
+  add_user_to_project(user_id:String, project_id:String, callback:any) {
     let body = {
     "user_id" : user_id,
     "project_id" : project_id
@@ -52,7 +52,7 @@ export class projectService {
       }
     )
   }
-  remove_user_from_project(user_id:string, project_id:string, callback:any) {
+  remove_user_from_project(user_id:String, project_id:String, callback:any) {
     let body = {
     "user_id" : user_id,
     "project_id" : project_id

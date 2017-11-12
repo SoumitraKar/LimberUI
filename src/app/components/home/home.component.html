@@ -1,0 +1,161 @@
+<div class="home-component row">
+
+  <div class="row col-12">
+  <div class="col-md-8 assigned-to-me">
+    <div class="assigned-to-me-header">
+      Assigned to me
+    </div>
+    <table>
+      <tr>
+        <th class = "assigned-to-me-lv">Lbl</th>
+        <th class = "assigned-to-me-key">
+          Key
+        </th>
+        <th class = "assigned-to-me-name">
+          Summary
+        </th>
+        <th class = "assigned-to-me-points">
+          value
+        </th>
+        <th class = "assigned-to-me-progress">
+          Progress
+        </th>
+        <th class = "assigned-to-me-menu">
+          menu
+        </th>
+      </tr>
+      <tbody *ngFor = "let story of stories">
+        <tr class= "assigned-to-me-story">
+          <td>
+            <div *ngFor = "let lebel of story.labelList"
+            class="assigned-to-me-lebel" [style.background-color]="lebel.colorCode"
+            triggers="mouseenter:mouseleave" placement="right"
+            ngbPopover="{{lebel.name}}">
+            </div>
+          </td>
+          <td>
+            {{story.key}}
+          </td>
+          <td>
+            {{story.summary| slice:0:50}}<span *ngIf="story.summary.length > 50">...</span>
+          </td>
+          <td>
+            {{story.points}} pts
+          </td>
+          <td>
+
+          </td>
+          <td class= "assigned-to-me-lebel-icon">
+            <i class="fa fa-align-justify" aria-hidden="true"></i>
+          </td>
+        </tr>
+        <tr *ngFor = "let subtask of story.subtasks">
+          <td></td>
+          <td>
+            {{subtask.key}}
+          </td>
+          <td>
+            {{subtask.summary}}
+          </td>
+          <td>
+            {{subtask.estimate}} hrs
+          </td>
+          <td>
+            <div class="double-bar-graph-box pull-right"
+            triggers="mouseenter:mouseleave" placement="left"
+            ngbPopover="{{(subtask.timeLogged*100/subtask.estimate).toFixed(1)}} %">
+              <div class="double-bar-graph-full"></div>
+              <div class="double-bar-graph-bar" [ngStyle]="set_bar_color(subtask.timeLogged*100/subtask.estimate)"
+              [style.width]="subtask.timeLogged*100/subtask.estimate + '%'"></div>
+            </div>
+          </td>
+          <td class= "assigned-to-me-lebel-icon">
+            <i class="fa fa-align-justify" aria-hidden="true"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="project-container col-md-4">
+    <div *ngFor = "let project of projects" class = "project-box col-12" (click) = "goto_sprintBoard(project._id)">
+      <div class="col-12 project-box-header">
+        {{project.name}}
+        <i class="fa fa-pencil-square" (click)="open(project, editProjectModal)" aria-hidden="true"></i>
+      </div>
+      <div class="project-box-body">
+        {{project._id}}
+      </div>
+      <div class = "member-img-container popover-with-header">
+        <span *ngFor = "let member of project.memberList"
+        class="member-img" triggers="mouseenter:mouseleave" placement="left" ngbPopover="{{member.email_id}}"
+         popoverTitle="{{member.first_name}}">{{member.initials}}</span>
+      </div>
+    </div>
+    <div class="project-box new-project">
+      New Project
+    </div>
+  </div>
+    </div>
+</div>
+
+
+
+<!-- EDIT PROJECT MODALWINDOW CODE STARTS -->
+<ng-template #editProjectModal let-c="close" let-d="dismiss" class= "modal modal-lg">
+  <div class="modal-header">
+    <h4 class="modal-title">Edit Project</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <b>Project : </b> {{projectToEdit.name}}<br>
+    <b>Project Id : </b> {{projectToEdit._id}}<br>
+    <b>Members : </b><br>
+    <div *ngFor = "let member of projectToEdit.memberList" class="">
+      {{member.first_name}}
+      {{member._id}}
+    </div>
+    <hr>
+    <input type="text" [(ngModel)] ="userId" class = "col-12">
+    <button type="button" name="button" class = "col-12" (click) = "add_user_to_project(userId, projectToEdit._id)">add_user_to_project</button>
+    <button type="button" name="button" class = "col-12" (click) = "remove_user_from_project(userId, projectToEdit._id)">remove_user_from_project</button>
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
+    <button type="button" class="btn btn-secondary" (click)="c('Close click')">Save</button>
+  </div>
+</ng-template>
+
+<!-- EDIT PROJECT MODAL WINDOW CODE ENDS -->
+<!-- NEW PROJECT MODAL WINDOW CODE STARTS -->
+<ng-template #newProjectModal let-c="close" let-d="dismiss" class= "modal modal-lg">
+  <div class="modal-header">
+    <h4 class="modal-title">Edit Project</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <b>Project : </b> {{projectToEdit.name}}<br>
+    <b>Project Id : </b> {{projectToEdit._id}}<br>
+    <b>Members : </b><br>
+    <div *ngFor = "let member of projectToEdit.memberList" class="">
+      {{member.first_name}}
+      {{member._id}}
+    </div>
+    <hr>
+    <input type="text" [(ngModel)] ="userId" class = "col-12">
+    <button type="button" name="button" class = "col-12" (click) = "add_user_to_project(userId, projectToEdit._id)">add_user_to_project</button>
+    <button type="button" name="button" class = "col-12" (click) = "remove_user_from_project(userId, projectToEdit._id)">remove_user_from_project</button>
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
+    <button type="button" class="btn btn-secondary" (click)="c('Close click')">Save</button>
+  </div>
+</ng-template>
+
+<!-- NEW PROJECT MODAL WINDOW CODE ENDS -->
+drag drop - <a href="https://www.npmjs.com/package/ng2-drag-drop">https://www.npmjs.com/package/ng2-drag-drop</a>

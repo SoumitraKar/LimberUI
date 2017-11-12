@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { projectService } from '../../../services/project.service';
 
 @Component({
@@ -11,6 +11,7 @@ import { projectService } from '../../../services/project.service';
 export class NavbarComponent {
   constructor(private project: projectService) {
   }
+  @Output() gotoPage = new EventEmitter<String>();
 
   variableName:any = {};
   onclickBtn() {
@@ -20,5 +21,10 @@ export class NavbarComponent {
         parent.variableName = project._body;
       }
     );
+  }
+
+  goto_page(pageName:String) {
+    console.log("Inside goto_page");
+    this.gotoPage.emit(pageName);
   }
 }

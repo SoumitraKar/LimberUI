@@ -1,0 +1,130 @@
+.home-component {
+  padding-top: 32px;
+}
+.project-box {
+    background: #32a8d8;
+    margin: 6px -12px 6px 6px;
+    padding: 2px 5px;
+    cursor: pointer;
+    min-width: 241px;
+    color: black;
+    /* clear: both; */
+    min-height: 99px;
+    border-radius: 8px;
+    box-shadow: 1px 1px 6px #286090;
+    float: right;
+}
+.project-box.new-project {
+    background-color: #e4e4e4;
+    width: 100%;
+    color: #545454;
+    font-weight: 500;
+    text-align: center;
+    padding-top: 32px;
+}
+.project-container {
+  box-shadow: inset 2px 0px 0px 0px #eeeeee;
+}
+.project-box-header {
+    border-bottom: 1px solid #376d9a;
+    font-weight: 600;
+    cursor: auto;
+}
+.project-box-header i.fa.fa-pencil-square {
+    float: right;
+    margin: 3px -10px 0px 0px;
+}
+.member-img {
+  width: 33px;
+  text-align: center;
+  background-color: #a0e1fc;
+  float: right;
+  margin: 0px 4px 4px 4px;
+  padding: 0px;
+  border-radius: 61px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.member-img-container {
+  float: right;
+  margin: 15px 1px 4px 1px;
+}
+.assigned-to-me {
+  border: 1px solid #32a8d8;
+  border-radius: 5px;
+  padding: 0px;
+  color: #135874;
+}
+.assigned-to-me-header {
+  height: 35px;
+  background-color: #32a8d8;
+  margin: 0px;
+  padding: 5px 15px;
+  font-weight: 500;
+  color: white;
+}
+.assigned-to-me-body {
+    padding: 14px 13px;
+    border-bottom: 1px solid #32a8d8;
+}
+.assigned-to-me-story {
+   background-color: #def7ff;
+   border-left: 1px solid #32a8d8;
+}
+
+.assigned-to-me th, .assigned-to-me td {
+    padding-left: 17px;
+    border-bottom: 1px solid #32a8d8;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.assigned-to-me th {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+th.assigned-to-me-key {
+    width: 90px;
+    min-width: 90px;
+}
+.assigned-to-me table {
+    width: 100%;
+    padding: 8px;
+}
+.assigned-to-me-lebel  {
+    width: 8px;
+    height: 27px;
+    float: left;
+    margin-right: 3px;
+    position: relative;
+}
+th.assigned-to-me-points {
+    width: 72px;
+}
+th.assigned-to-me-lv {
+    width: 52px;
+}
+th.assigned-to-me-name {
+    width: 59%;
+}
+th.assigned-to-me-menu {
+    width: 71px;
+}
+.assigned-to-me-lebel-icon {
+  text-align: center;
+  cursor: pointer;
+}
+.double-bar-graph-box {
+    width: 100%;
+    height: 20px;
+}
+.double-bar-graph-full, .double-bar-graph-bar {
+    background-color: #5cb85c;
+    height: 9px;
+    margin-bottom: 3px;
+}
+.double-bar-graph-full {
+  width: 100%;
+}
+.assigned-to-me-progress {
+    width: 91px;
+}
