@@ -15,13 +15,17 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 export class HomeComponent {
   constructor(private projectService: projectService, private storyService: storyService, private modalService: NgbModal,
   private _appComponent: AppComponent) {
+    var parent = this;
       this.userId = this._appComponent.get_userId();
-      this.get_project_details_by_user (this.userId);
-      this.get_story_by_assignee (this.userId);
+      this.get_project_details_by_user();
+      // this.get_story_by_assignee (this.userId);
+
+      this.get_story_by_assignee();
   }
   userId:String = "5a01bfa0dfad2b2b74dea825";
   projectId:String = "";
   projects:any = [];
+  pejs:any;
   stories:any = [];
   projectToEdit:any = {};
   set_bar_color (per:number) {
@@ -30,34 +34,31 @@ export class HomeComponent {
     };
     return styles;
   }
-  goto_sprintBoard(projectId:String) {
-    this._appComponent.set_projectId(projectId);
-    this._appComponent.goto_page('storyBoard');
-  }
-  get_project_details_by_user (user_id:String) {
+  get_story_by_assignee() {
     var parent = this;
-    this.projectService.get_project_details_by_user(user_id,
-      function (project:any){
-        parent.projects = JSON.parse(project._body);
-      }
-    );
-  }
-  get_story_by_assignee(user_id:String) {
-    var parent = this;
-    this.storyService.get_story_by_assignee(user_id,
+    this.storyService.get_story_by_assignee(parent.userId,
       function (stories:any){
+        console.log("ggggggggggggggggggggg");
+        // console.log(this.userId);
+        console.log(stories._body);
         parent.stories = JSON.parse(stories._body);
       }
     );
   }
-  get_project_details_by_id(id:String) {
+
+  get_project_details_by_user () {
     var parent = this;
-    this.projectService.get_project_details_by_id(id,
+    this.projectService.get_project_details_by_user(this.userId,
       function (project:any){
         parent.projects = JSON.parse(project._body);
       }
     );
   }
+  goto_sprintBoard(projectId:String) {
+    this._appComponent.set_projectId(projectId);
+    this._appComponent.goto_page('storyBoard');
+  }
+
   add_user_to_project(user_id:String, project_id:String) {
     var parent = this;
     var changedProject;

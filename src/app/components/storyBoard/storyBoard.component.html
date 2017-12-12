@@ -1,7 +1,40 @@
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-<br>
-{{sprint}} <br>
-name : {{sprint.name}} <br>
-description : {{sprint.description}} <br>
-project name : {{sprint.project.name}} <br>
-release Id : {{sprint.release}} <br>
+<div class="not-available" *ngIf = "!dataAvailable">
+  NO SPRINTS FOUND...
+</div>
+<div class="" *ngIf = "dataAvailable">
+  <br>
+  name : {{sprint.name}} <br>
+  description : {{sprint.description}} <br>
+  project name : {{sprint.project.name}} <br>
+  release Id : {{sprint.release}} <br>
+  <div class="storyBoardContainer">
+    <div class="storyBoardHolder">
+      <ul class="storyBoardList backlogs" droppable (onDrop)="dropFunction($event, 'backlog')">
+        <span class = "storyBoardListHeader">Backlogs</span>
+        <div class=""  *ngFor = "let story of stories">
+          <li class = "storyBoardStory" draggable [dragData]="story" *ngIf = "story && story.lable.toLowerCase() === 'backlog'">
+            {{story.summary}} <br>
+          </li>
+        </div>
+      </ul>
+      <ul class="storyBoardList " *ngFor = "let label of sprint.labels" droppable
+      (onDrop)="dropFunction($event, label._id)" [style.background-color]="label.colorCode">
+        <span class = "storyBoardListHeader">{{label.text}} {{label.colorCode}}</span>
+        <div class=""  *ngFor = "let story of stories">
+          <li class = "storyBoardStory" draggable [dragData]="story" *ngIf = "label._id === story.lable">
+            {{story.summary}} <br>
+          </li>
+        </div>
+      </ul>
+      <ul class="storyBoardList buglist" droppable (onDrop)="dropFunction($event, 'buglist')">
+        <span class = "storyBoardListHeader">Buglist</span>
+          <div class=""  *ngFor = "let story of stories">
+            <li class = "storyBoardStory" draggable [dragData]="story"
+            *ngIf = "story && story.lable.toLowerCase() === 'buglist'">
+              {{story.summary}} <br>
+            </li>
+          </div>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class=""  [ngClass] = "{closed_left_panel : !open}" *ngIf = "dataAvailable">
+<div class="left-panel-bg" [hidden] = "!open" >
+</div>
+  <div class="left-panel">
+    <form>
+      <div class="form-group">
+        <input  class="form-control" placeholder="Search project by name...">
+        <div class="projects-list">
+          <div *ngFor = "let project of projects">
+            <span class="projects-list-project">{{project.name}}</span>
+            <div *ngIf = "project.sprint">
+              <span class="projects-list-sprint">{{project.sprint.name}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

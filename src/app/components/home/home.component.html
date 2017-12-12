@@ -1,5 +1,4 @@
 <div class="home-component row">
-
   <div class="row col-12">
   <div class="col-md-8 assigned-to-me">
     <div class="assigned-to-me-header">
@@ -77,18 +76,16 @@
     </table>
   </div>
   <div class="project-container col-md-4">
-    <div *ngFor = "let project of projects" class = "project-box col-12" (click) = "goto_sprintBoard(project._id)">
+    <div *ngFor = "let project of projects" class = "project-box col-12">
       <div class="col-12 project-box-header">
         {{project.name}}
         <i class="fa fa-pencil-square" (click)="open(project, editProjectModal)" aria-hidden="true"></i>
       </div>
-      <div class="project-box-body">
+      <div class="project-box-body" (click) = "goto_sprintBoard(project._id)">
         {{project._id}}
       </div>
-      <div class = "member-img-container popover-with-header">
-        <span *ngFor = "let member of project.memberList"
-        class="member-img" triggers="mouseenter:mouseleave" placement="left" ngbPopover="{{member.email_id}}"
-         popoverTitle="{{member.first_name}}">{{member.initials}}</span>
+      <div class="project-box-sprint">
+        SPRINT
       </div>
     </div>
     <div class="project-box new-project">
@@ -159,3 +156,17 @@
 
 <!-- NEW PROJECT MODAL WINDOW CODE ENDS -->
 drag drop - <a href="https://www.npmjs.com/package/ng2-drag-drop">https://www.npmjs.com/package/ng2-drag-drop</a>
+
+<ul>
+  <li draggable>Coffee</li>
+  <li draggable>Tea</li>
+  <li draggable>Milk</li>
+</ul>
+<div droppable>
+  <li draggable>xxx</li>
+  <li draggable>ccc</li>
+</div>
+<div droppable>
+  <li draggable>vvv</li>
+  <li draggable>bbb</li>
+</div>

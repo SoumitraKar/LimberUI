@@ -18,4 +18,16 @@ export class storyService {
       }
     )
   }
+  get_story_by_sprint(sprintId:String, callback:any) {
+    let body = {
+    "sprint" : sprintId
+    };
+    this.http.post("http://localhost:8000/get_story_by_sprint", body).subscribe (
+      (res:Response) => {
+        console.log(res);
+        this.jsonVar = res;
+        callback (this.jsonVar);
+      }
+    )
+  }
 }

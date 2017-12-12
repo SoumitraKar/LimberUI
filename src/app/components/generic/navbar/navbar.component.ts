@@ -11,8 +11,9 @@ import { projectService } from '../../../services/project.service';
 export class NavbarComponent {
   constructor(private project: projectService) {
   }
+  @Output() toggleLeftPanel = new EventEmitter<boolean>();
   @Output() gotoPage = new EventEmitter<String>();
-
+  open:boolean = false;
   variableName:any = {};
   onclickBtn() {
     var parent = this;
@@ -24,7 +25,10 @@ export class NavbarComponent {
   }
 
   goto_page(pageName:String) {
-    console.log("Inside goto_page");
     this.gotoPage.emit(pageName);
+  }
+  toggleLeftIcon() {
+    this.open = !this.open;
+    this.toggleLeftPanel.emit(this.open);
   }
 }

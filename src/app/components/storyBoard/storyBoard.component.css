@@ -1,0 +1,62 @@
+.storyBoardList {
+    width: 320px;
+    float: left;
+    height: 670px;
+    background-color: #d9534f;
+    margin: 4px;
+    padding: 10px;
+    border-radius: 7px;
+}
+.storyBoardHolder {
+    float: left;
+    overflow: auto;
+    display: flex;
+    position: absolute;
+    /* width: 2000px; */
+}
+.storyBoardContainer {
+    float: left;
+    width: calc(100% - 30px);
+    position: absolute;
+    height: 700px;
+    overflow: auto;
+}
+.storyBoardListHeader {
+  font-weight: 500;
+}
+.not-available {
+    position: absolute;
+    width: 100%;
+    margin: 0px;
+    /* height: 200px; */
+    left: 0;
+    text-align: center;
+    top: 208px;
+    font-size: 60px;
+    color: #a0c9d6;
+}
+li.storyBoardStory {
+    list-style: none;
+    background-color: #ffffffe3;
+    margin: 5px auto;
+    width: 100%;
+    padding: 5px;
+    min-height: 80px;
+    border-radius: 5px;
+}
+.drag-border {
+    background-color: #0000004f !important;
+    color: #48484800 !important;
+    border: 0;
+}
+.drag-hint-border {
+    border: 0;
+    opacity: 0.8;
+}
+.drag-over-border {
+    opacity: 1;
+}
+.drag-transit {
+  border: 0;
+  background-color: #ffffffa6 !important;
+}

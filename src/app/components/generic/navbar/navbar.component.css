@@ -1,5 +1,5 @@
 .navbar {
-    background-color: #0071a0;
+    background-color: #32a8d8;
     width: 100%;
     position: fixed;
     top: 0px;
@@ -16,8 +16,25 @@
 .bell-logo {
     position: absolute;
     right: 0px;
-    margin: 11px 21px;
+    margin: -9px 21px;
     cursor: pointer;
+}
+.navbar-menu {
+  font-size: 36px;
+  cursor: pointer;
+  -moz-transition: all 0.5s ease;/* WebKit */
+  -webkit-transition: all 0.5s ease;/* Opera */
+  -o-transition: all 0.5s ease;/* Standard */
+  transition: all 0.5s ease;
+}
+.navbar-menu.rotate {
+  -ms-transform: rotate(180deg); /* IE 9 */
+  -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+  transform: rotate(180deg);
+  -moz-transition: all 0.5s ease;/* WebKit */
+  -webkit-transition: all 0.5s ease;/* Opera */
+  -o-transition: all 0.5s ease;/* Standard */
+  transition: all 0.5s ease;
 }
 .navbar-toggleable-xl .navbar-collapse {
     width: calc(100% - 200px);
@@ -33,4 +50,16 @@ i#dropdownBellButton {
     height: 20px;
     width: 20px;
     overflow: hidden;
+}
+a.navbar-brand {
+    display: block;
+    cursor: pointer;
+    left: 50%;
+    text-align: center;
+    position: absolute;
+    font-family: sans-serif;
+    font-weight: 500;
+    letter-spacing: 4px;
+    font-size: 26px;
+    margin-left: -31px;
 }

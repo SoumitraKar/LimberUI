@@ -4,12 +4,12 @@
 .project-box {
     background: #32a8d8;
     margin: 6px -12px 6px 6px;
-    padding: 2px 5px;
+    padding: 2px 5px 0px 5px;
     cursor: pointer;
     min-width: 241px;
     color: black;
     /* clear: both; */
-    min-height: 99px;
+    min-height: 91px;
     border-radius: 8px;
     box-shadow: 1px 1px 6px #286090;
     float: right;
@@ -34,6 +34,14 @@
     float: right;
     margin: 3px -10px 0px 0px;
 }
+.project-box-sprint {
+  background-color: #17607d;
+  height: 33px;
+  margin: 4px -6px 0 -5px;
+  padding: 2px 14px;
+  color: white;
+  border-radius: 0px 0px 12px 12px;
+}
 .member-img {
   width: 33px;
   text-align: center;
@@ -45,15 +53,12 @@
   font-size: 14px;
   font-weight: 500;
 }
-.member-img-container {
-  float: right;
-  margin: 15px 1px 4px 1px;
-}
 .assigned-to-me {
   border: 1px solid #32a8d8;
   border-radius: 5px;
   padding: 0px;
   color: #135874;
+    overflow: hidden;
 }
 .assigned-to-me-header {
   height: 35px;
@@ -68,7 +73,7 @@
     border-bottom: 1px solid #32a8d8;
 }
 .assigned-to-me-story {
-   background-color: #def7ff;
+   background-color: white;
    border-left: 1px solid #32a8d8;
 }
 

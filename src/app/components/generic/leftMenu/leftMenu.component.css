@@ -1,0 +1,75 @@
+.left-panel {
+  overflow: hidden;
+  position: fixed;
+  background-color: white;
+  width: 400px;
+  height: calc(100% - 65px);
+  left: 5px;
+  top: 52px;
+  border: 3px solid #32a8d8;
+  padding: 7px;
+  box-shadow: 2px 2px 15px -4px #083648;
+  border-radius: 8px;
+  -webkit-transition:all 0.9s ease-in-out;
+  -moz-transition:all 0.9s ease-in-out;
+  -o-transition:all 0.9s ease-in-out;
+  transition:all 0.9s ease-in-out;
+}
+.closed_left_panel .left-panel {
+  background-color: white;
+  width: 400px;
+  min-height: 0px;
+  height: 0px;
+  border: 0px solid #32a8d8;
+  padding: 0px;
+  -webkit-transition:all 0.9s ease-in-out;
+  -moz-transition:all 0.9s ease-in-out;
+  -o-transition:all 0.9s ease-in-out;
+  transition:all 0.9s ease-in-out;
+}
+.projects-list {
+    width: 100%;
+    height: -webkit-fill-available;
+    padding-bottom: 25px;
+    overflow: auto;
+    -webkit-transition-delay:all 2s; /* Safari */
+    transition-delay:all 2s;
+    -moz-transition-delay:all 2s;
+    -o-transition-delay:all 2s;
+}
+.closed_left_panel .projects-list {
+  overflow: hidden;
+}
+.projects-list-project {
+    background-color: #def7ff;
+    width: 100%;
+    float: left;
+    margin: 6px 0px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #32a8d8;
+    cursor: pointer;
+    padding-left: 47px;
+    box-shadow: inset 40px 0px #32a8d8;
+}
+span.projects-list-sprint {
+    background-color: #ffffff;
+    width: 100%;
+    float: left;
+    margin: 6px 0px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #17607d;
+    cursor: pointer;
+    padding-left: 47px;
+    box-shadow: inset 40px 0px #17607d;
+}
+
+.left-panel-bg {
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

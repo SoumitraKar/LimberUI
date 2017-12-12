@@ -2,5 +2,6 @@
   <!--<app-rightpanel></app-rightpanel>-->
   <router-outlet>
   </router-outlet>
-  <app-navbar (gotoPage) = "goto_page($event)"></app-navbar>
+  <app-navbar (gotoPage) = "goto_page($event)" (toggleLeftPanel) = "toggleLeftPanel($event)"></app-navbar>
+
 </div>

@@ -39,6 +39,18 @@ export class projectService {
       }
     )
   }
+  get_project_full_details_by_user(id:String, callback:any) {
+    let body = {
+    "user_id" : id
+    };
+    this.http.post("http://localhost:8000/get_project_full_details_by_user", body).subscribe (
+      (res:Response) => {
+        console.log(res);
+        this.jsonVar = res;
+        callback (this.jsonVar);
+      }
+    )
+  }
   add_user_to_project(user_id:String, project_id:String, callback:any) {
     let body = {
     "user_id" : user_id,
