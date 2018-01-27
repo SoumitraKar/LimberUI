@@ -40,14 +40,12 @@ get_story_by_sprint(sprintId:String) {
   var parent = this;
   this.storyService.get_story_by_sprint(sprintId,
     function (story:any){
-      console.log("PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP");
       parent.stories = JSON.parse(story._body);
       console.log(parent.stories);
     }
   )
 }
 dropFunction (e: any, dropLoc:String) {
-  console.log("2222222222222222222222222");
   e.dragData.lable = dropLoc;
   console.log(e.dragData.lable);
   console.log(dropLoc);

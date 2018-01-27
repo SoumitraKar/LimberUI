@@ -24,7 +24,7 @@
         </th>
       </tr>
       <tbody *ngFor = "let story of stories">
-        <tr class= "assigned-to-me-story">
+        <tr class= "assigned-to-me-story"  (click) = "goto_storyPage(story._id)">
           <td>
             <div *ngFor = "let lebel of story.labelList"
             class="assigned-to-me-lebel" [style.background-color]="lebel.colorCode"
@@ -48,7 +48,7 @@
             <i class="fa fa-align-justify" aria-hidden="true"></i>
           </td>
         </tr>
-        <tr *ngFor = "let subtask of story.subtasks">
+        <tr *ngFor = "let subtask of story.subtasks" >
           <td></td>
           <td>
             {{subtask.key}}
@@ -77,15 +77,12 @@
   </div>
   <div class="project-container col-md-4">
     <div *ngFor = "let project of projects" class = "project-box col-12">
-      <div class="col-12 project-box-header">
+      <div class="col-12 project-box-header" >
         {{project.name}}
         <i class="fa fa-pencil-square" (click)="open(project, editProjectModal)" aria-hidden="true"></i>
       </div>
       <div class="project-box-body" (click) = "goto_sprintBoard(project._id)">
-        {{project._id}}
-      </div>
-      <div class="project-box-sprint">
-        SPRINT
+        {{project.description}}
       </div>
     </div>
     <div class="project-box new-project">
@@ -98,75 +95,13 @@
 
 
 <!-- EDIT PROJECT MODALWINDOW CODE STARTS -->
-<ng-template #editProjectModal let-c="close" let-d="dismiss" class= "modal modal-lg">
-  <div class="modal-header">
-    <h4 class="modal-title">Edit Project</h4>
-    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <b>Project : </b> {{projectToEdit.name}}<br>
-    <b>Project Id : </b> {{projectToEdit._id}}<br>
-    <b>Members : </b><br>
-    <div *ngFor = "let member of projectToEdit.memberList" class="">
-      {{member.first_name}}
-      {{member._id}}
-    </div>
-    <hr>
-    <input type="text" [(ngModel)] ="userId" class = "col-12">
-    <button type="button" name="button" class = "col-12" (click) = "add_user_to_project(userId, projectToEdit._id)">add_user_to_project</button>
-    <button type="button" name="button" class = "col-12" (click) = "remove_user_from_project(userId, projectToEdit._id)">remove_user_from_project</button>
-
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
-    <button type="button" class="btn btn-secondary" (click)="c('Close click')">Save</button>
-  </div>
+<ng-template #editProjectModal let-c="close" let-d="close" class= "modal modal-lg">
+  <app-edit-project [projectToEdit] = "projectToEdit" (closePage) = "c($event)">
+  </app-edit-project>
 </ng-template>
 
 <!-- EDIT PROJECT MODAL WINDOW CODE ENDS -->
-<!-- NEW PROJECT MODAL WINDOW CODE STARTS -->
-<ng-template #newProjectModal let-c="close" let-d="dismiss" class= "modal modal-lg">
-  <div class="modal-header">
-    <h4 class="modal-title">Edit Project</h4>
-    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <b>Project : </b> {{projectToEdit.name}}<br>
-    <b>Project Id : </b> {{projectToEdit._id}}<br>
-    <b>Members : </b><br>
-    <div *ngFor = "let member of projectToEdit.memberList" class="">
-      {{member.first_name}}
-      {{member._id}}
-    </div>
-    <hr>
-    <input type="text" [(ngModel)] ="userId" class = "col-12">
-    <button type="button" name="button" class = "col-12" (click) = "add_user_to_project(userId, projectToEdit._id)">add_user_to_project</button>
-    <button type="button" name="button" class = "col-12" (click) = "remove_user_from_project(userId, projectToEdit._id)">remove_user_from_project</button>
 
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
-    <button type="button" class="btn btn-secondary" (click)="c('Close click')">Save</button>
-  </div>
-</ng-template>
-
-<!-- NEW PROJECT MODAL WINDOW CODE ENDS -->
 drag drop - <a href="https://www.npmjs.com/package/ng2-drag-drop">https://www.npmjs.com/package/ng2-drag-drop</a>
 
-<ul>
-  <li draggable>Coffee</li>
-  <li draggable>Tea</li>
-  <li draggable>Milk</li>
-</ul>
-<div droppable>
-  <li draggable>xxx</li>
-  <li draggable>ccc</li>
-</div>
-<div droppable>
-  <li draggable>vvv</li>
-  <li draggable>bbb</li>
-</div>
+<app-add-project></app-add-project>

@@ -58,40 +58,9 @@ export class HomeComponent {
     this._appComponent.set_projectId(projectId);
     this._appComponent.goto_page('storyBoard');
   }
-
-  add_user_to_project(user_id:String, project_id:String) {
-    var parent = this;
-    var changedProject;
-    this.projectService.add_user_to_project(user_id, project_id,
-      function (project:any){
-        // parent.projects = JSON.parse(project._body);
-        changedProject = JSON.parse(project._body);
-        for (let key in parent.projects) {
-          if( parent.projects[key]._id == changedProject._id) {
-            parent.projects[key] = changedProject;
-            parent.projectToEdit = changedProject;
-            return;
-          }
-        }
-      }
-    );
-  }
-  remove_user_from_project(user_id:String, project_id:String) {
-    var parent = this;
-    var changedProject;
-    this.projectService.remove_user_from_project(user_id, project_id,
-      function (project:any){
-        // parent.projects = JSON.parse(project._body);
-        changedProject = JSON.parse(project._body);
-        for (let key in parent.projects) {
-          if( parent.projects[key]._id == changedProject._id) {
-            parent.projects[key] = changedProject;
-            parent.projectToEdit = changedProject;
-            return;
-          }
-        }
-      }
-    );
+  goto_storyPage(storyId:String) {
+    this._appComponent.set_storyId(storyId);
+    this._appComponent.goto_page('storyPage');
   }
 
   // Modal Code Start

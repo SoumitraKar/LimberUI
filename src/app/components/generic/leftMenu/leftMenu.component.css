@@ -10,10 +10,10 @@
   padding: 7px;
   box-shadow: 2px 2px 15px -4px #083648;
   border-radius: 8px;
-  -webkit-transition:all 0.9s ease-in-out;
-  -moz-transition:all 0.9s ease-in-out;
-  -o-transition:all 0.9s ease-in-out;
-  transition:all 0.9s ease-in-out;
+  -webkit-transition:all 0.3s ease-in-out;
+  -moz-transition:all 0.3s ease-in-out;
+  -o-transition:all 0.3s ease-in-out;
+  transition:all 0.3s ease-in-out;
 }
 .closed_left_panel .left-panel {
   background-color: white;
@@ -22,10 +22,10 @@
   height: 0px;
   border: 0px solid #32a8d8;
   padding: 0px;
-  -webkit-transition:all 0.9s ease-in-out;
-  -moz-transition:all 0.9s ease-in-out;
-  -o-transition:all 0.9s ease-in-out;
-  transition:all 0.9s ease-in-out;
+  -webkit-transition:all 0.3s ease-in-out;
+  -moz-transition:all 0.3s ease-in-out;
+  -o-transition:all 0.3s ease-in-out;
+  transition:all 0.3s ease-in-out;
 }
 .projects-list {
     width: 100%;

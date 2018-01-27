@@ -24,6 +24,16 @@
 .storyBoardListHeader {
   font-weight: 500;
 }
+.createStory{
+    font-size: 40px;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    background-color: #32a8d8;
+    border: 0;
+    cursor: pointer;
+    color: #def7ff;
+}
 .not-available {
     position: absolute;
     width: 100%;

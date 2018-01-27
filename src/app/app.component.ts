@@ -12,6 +12,7 @@ import { projectService } from './services/project.service';
 export class AppComponent  {
   userId:String = "5a01bfa0dfad2b2b74dea825";
   projectId:String;
+  storyId:String;
   projects:any = [];
   pageName:String;
   url = "/";
@@ -26,6 +27,9 @@ export class AppComponent  {
   }
   set_projectId (projectId:String) {
     this.projectId = projectId;
+  }
+  set_storyId (storyId:String) {
+    this.storyId = storyId;
   }
   get_projectId () {
     return this.projectId;
@@ -46,6 +50,9 @@ export class AppComponent  {
         break;
       case 'storyBoard' :
         this.router.navigate(['/storyBoard/' + this.projectId]);
+        break;
+      case 'storyPage' :
+        this.router.navigate(['/storyPage/' + this.storyId]);
         break;
       default:
         this.router.navigate(['/home']);

@@ -34,13 +34,10 @@
     float: right;
     margin: 3px -10px 0px 0px;
 }
-.project-box-sprint {
-  background-color: #17607d;
-  height: 33px;
-  margin: 4px -6px 0 -5px;
-  padding: 2px 14px;
-  color: white;
-  border-radius: 0px 0px 12px 12px;
+.project-box-body {
+    float: left;
+    width: 100%;
+    min-height: 59px;
 }
 .member-img {
   width: 33px;
@@ -57,7 +54,7 @@
   border: 1px solid #32a8d8;
   border-radius: 5px;
   padding: 0px;
-  color: #135874;
+  color: #000000;
     overflow: hidden;
 }
 .assigned-to-me-header {
@@ -65,8 +62,9 @@
   background-color: #32a8d8;
   margin: 0px;
   padding: 5px 15px;
-  font-weight: 500;
+  font-weight: 700;
   color: white;
+  letter-spacing: 1px;
 }
 .assigned-to-me-body {
     padding: 14px 13px;
@@ -75,13 +73,14 @@
 .assigned-to-me-story {
    background-color: white;
    border-left: 1px solid #32a8d8;
+   cursor: pointer;
 }
 
 .assigned-to-me th, .assigned-to-me td {
     padding-left: 17px;
     border-bottom: 1px solid #32a8d8;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 6px;
+    padding-bottom: 6px;
 }
 .assigned-to-me th {
   padding-top: 5px;
@@ -97,7 +96,7 @@ th.assigned-to-me-key {
 }
 .assigned-to-me-lebel  {
     width: 8px;
-    height: 27px;
+    height: 21px;
     float: left;
     margin-right: 3px;
     position: relative;

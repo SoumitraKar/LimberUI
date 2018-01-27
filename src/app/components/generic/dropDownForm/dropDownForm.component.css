@@ -1,0 +1,62 @@
+.dropDownForm {
+    float: left;
+    margin: 0px 1px;
+    width: 100%;
+    margin-bottom: 14px;
+}
+.dropDownFormHeading {
+    float: left;
+    font-weight: 700;
+    padding: 0px 13px 0px 5px;
+}
+.dropDownFormbar {
+    background-color: #95d2eb;
+    float: left;
+    width: 100%;
+    border-radius: 4px;
+    padding: 1px 8px;
+}
+.dropDownFormbar .fa-chevron-down {
+  float: right;
+  padding: 2px;
+  -moz-transition: all 0.2s ease;/* WebKit */
+  -webkit-transition: all 0.2s ease;/* Opera */
+  -o-transition: all 0.2s ease;/* Standard */
+  transition: all 0.2s ease;
+}
+.dropDownFormbar .fa-chevron-down.rotate {
+  margin-top: 2px;
+  -ms-transform: rotate(180deg); /* IE 9 */
+  -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+  transform: rotate(180deg);
+  -moz-transition: all 0.2s ease;/* WebKit */
+  -webkit-transition: all 0.2s ease;/* Opera */
+  -o-transition: all 0.2s ease;/* Standard */
+  transition: all 0.2s ease;
+}
+.dropDownFormbody {
+    border: 1px solid #95d2eb;
+    margin-top: 20px;
+    padding: 12px;
+    -moz-transition: all 0.2s ease;/* WebKit */
+    -webkit-transition: all 0.2s ease;/* Opera */
+    -o-transition: all 0.2s ease;/* Standard */
+    transition: all 0.2s ease;
+}
+.dropDownFormbody.closeMe {
+    height: 0px;
+    width: 100%;
+    padding: 0 12px;
+    overflow: hidden;
+    margin-top: -5px;
+    float: left;
+    -moz-transition: padding 0.2s ease;
+    -webkit-transition: padding 0.2s ease;
+    -o-transition: padding 0.2s ease;
+    transition: padding 0.2s ease;
+
+    -moz-transition: margin-top 0.2s ease;
+    -webkit-transition: margin-top 0.2s ease;
+    -o-transition: margin-top 0.2s ease;
+    transition: margin-top 0.2s ease;
+  }

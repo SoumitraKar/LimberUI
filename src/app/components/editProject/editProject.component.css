@@ -1,0 +1,8 @@
+.member-name-box {
+    float: left;
+    background-color: #dcdcdc;
+    border-bottom: 1px solid #bcbcbc;
+    padding: 2px 8px;
+    margin: 8px;
+    border-radius: 5px;
+}

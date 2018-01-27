@@ -1,0 +1,26 @@
+
+<div class="storyPage" *ngIf = "story">
+  <ul class="breadcrumb">
+    <li class="breadcrumb-item"><a href="">{{story.project.name}}</a></li>
+    <li class="breadcrumb-item active">{{story.key}}</li>
+  </ul>
+
+  <dropdown-form [heading] = "'Details'" [show] = true>
+    <table class = "detailsTable">
+      <tr>
+        <th>Name</th>
+        <td>{{story.name}}</td>
+      </tr>
+      <tr>
+        <th>Description</th>
+        <td>{{story.description}}</td>
+      </tr>
+    </table>
+  </dropdown-form>
+  <dropdown-form [heading] = "'Attachments'">
+  </dropdown-form>
+  <dropdown-form [heading] = "'Description'">
+  </dropdown-form>
+  <dropdown-form [heading] = "'Structure'">
+  </dropdown-form>
+</div>

@@ -53,4 +53,7 @@ h1 {
   }
   body {
       background-color: #def7ff;
+      font-size: 14px;
+      font-family: 'Didact Gothic', sans-serif;
+      font-weight: 200px;
   }
