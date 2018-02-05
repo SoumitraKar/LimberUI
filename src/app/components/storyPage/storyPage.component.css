@@ -18,3 +18,45 @@ table.detailsTable  {
     padding-right: 15px;
     text-align: justify;
 }
+.moreOption {
+    right: 0px;
+    position: absolute;
+    left: auto;
+}
+.moreMenu {
+    position: absolute;
+    right: 14px;
+}
+span.subtask-block-key {
+  background-color: #95d2eb;
+  padding: 5px 10px 5px 5px;
+  border-radius: 4px;
+  border: 2px solid #95d2eb;
+  float: left;
+  color: #326b82;
+  font-weight: 600;
+}
+span.subtask-block-summary {
+  background-color: #ffffff;
+  padding: 5px;
+  border-radius: 4px;
+  margin-left: -8px;
+  border: 2px solid #95d2eb;
+  float: left;
+  width: calc(100% - 82px);
+  overflow: hidden;
+  height: 35px;
+}
+.subtask-block {
+        height: 40px;
+}
+span.subtask-block-initials {
+    float: right;
+    background-color: #95d2eb;
+    padding: 2px 5px;
+    margin: -2px;
+    border-radius: 3px;
+}
+.subtask-block .fa.fa-align-justify.float-right {
+    padding: 5px 0px 5px 9px;
+}

@@ -15,9 +15,10 @@ import { dropDownFormComponent } from './components/generic/dropDownForm/dropDow
 import { HomeComponent } from './components/home/home.component';
 import { AddProject } from './components/addProject/addProject.component';
 import { EditProject } from './components/editProject/editProject.component';
+import { sunBurnStoryComponent } from './components/sunBurnStoryChart/sunBurnStoryChart.component';
 
 @NgModule({
-  declarations: [ AppComponent, NavbarComponent, LeftMenuComponent, dropDownFormComponent, HomeComponent, AddProject, EditProject, storyPageComponent, storyBoardComponent ],
+  declarations: [ AppComponent, NavbarComponent, LeftMenuComponent, dropDownFormComponent, HomeComponent, AddProject, EditProject, storyPageComponent, storyBoardComponent, sunBurnStoryComponent ],
   imports:      [
     FormsModule,
     BrowserModule,

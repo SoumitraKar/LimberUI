@@ -1,7 +1,7 @@
 {
-  "name": "angular-quickstart",
+  "name": "limber",
   "version": "1.0.0",
-  "description": "QuickStart package.json from the documentation, supplemented with testing support",
+  "description": "limber package.json from the documentation, supplemented with testing support",
   "scripts": {
     "build": "tsc -p src/",
     "build:watch": "tsc -p src/ -w",
@@ -34,9 +34,12 @@
     "@angular/router": "~4.3.4",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-beta.5",
     "angular-in-memory-web-api": "~0.3.0",
+    "angular2-google-chart": "^2.3.0",
     "bootstrap": "^4.0.0-alpha.6",
+    "chart.js": "^2.7.1",
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
+    "ng2-charts": "^1.6.0",
     "ng2-drag-drop": "^3.0.2",
     "rxjs": "5.0.1",
     "systemjs": "0.19.40",

@@ -1,10 +1,20 @@
 
 <div class="storyPage" *ngIf = "story">
-  <ul class="breadcrumb">
+  <ul class="breadcrumb pull-left">
     <li class="breadcrumb-item"><a href="">{{story.project.name}}</a></li>
     <li class="breadcrumb-item active">{{story.key}}</li>
   </ul>
-
+  <div class="moreMenu " ngbDropdown>
+    <button class = "btn-sm btn-outline-info pull-right"
+     aria-hidden="true"  id="dropdownManual"  ngbDropdownToggle> More </button>
+     <div class="dropdown-menu moreOption" aria-labelledby="dropdownManual">
+       <button class="dropdown-item">Create sub-task</button>
+       <button class="dropdown-item">Log work</button>
+       <hr>
+       <button class="dropdown-item">Flag</button>
+       <button class="dropdown-item">Set Dependent</button>
+     </div>
+  </div>
   <dropdown-form [heading] = "'Details'" [show] = true>
     <table class = "detailsTable">
       <tr>
@@ -21,6 +31,27 @@
   </dropdown-form>
   <dropdown-form [heading] = "'Description'">
   </dropdown-form>
+  <dropdown-form [heading] = "'statistics'">
+    <sun-burn-story-graph></sun-burn-story-graph>
+  </dropdown-form>
   <dropdown-form [heading] = "'Structure'">
+    <table class = "detailsTable">
+      <tr>
+        <th>Epic</th>
+        <td>{{story.epic}}</td>
+      </tr>
+      <tr>
+        <th>Sub-tasks</th>
+        <td>
+          <div class="subtask-block" *ngFor = "let subtask of story.subtasks">
+            <span class = "subtask-block-key">{{subtask.key}}</span>
+            <span class ="subtask-block-summary">{{subtask.summary}}
+            <i class="fa fa-align-justify float-right"></i>
+            <span class ="subtask-block-initials">{{subtask.assignee.initials}}</span>
+          </span>
+          </div>
+        </td>
+      </tr>
+    </table>
   </dropdown-form>
 </div>
